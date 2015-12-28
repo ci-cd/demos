@@ -4,9 +4,33 @@
 .mtj.tmp/
 
 # Package Files #
-*.jar
-*.war
-*.ear
+
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+*.lock
+*.log
+*.zip
+.metadata/.plugins/org.eclipse.core.resources/.history/8a/10c00216e7ac001516f282805180c55d
+*.index
+*.snap
+
+.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources
+*.prefs
+.metadata/.plugins/org.eclipse.jdt.core/javaLikeNames.txt
+*.dat
+.metadata/.plugins/org.eclipse.jdt.launching/.install.xml
+.metadata/.plugins/org.eclipse.jdt.launching/libraryInfos.xml
+Servers/Pivotal tc Server Developer Edition v3.0-config/web.xml
+Servers/Pivotal tc Server Developer Edition v3.0-config/tomcat-users.xml
+*.password
+Servers/Pivotal tc Server Developer Edition v3.0-config/server.xml
+Servers/Pivotal tc Server Developer Edition v3.0-config/context.xml
+*.access
+Servers/Pivotal tc Server Developer Edition v3.0-config/catalina.policy
+Servers/.project
+.metadata/version.ini
+.metadata/.plugins/org.springsource.ide.eclipse.dashboard.ui/feeds/Updates/623127801.xml
+.metadata/.plugins/org.springsource.ide.eclipse.dashboard.ui/feeds/dashboard.feeds.update/623127801.xml
+.metadata/.plugins/org.springsource.ide.eclipse.dashboard.ui/feeds/Feeds/-549550714.xml
+/Servers/
