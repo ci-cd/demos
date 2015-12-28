@@ -23,12 +23,12 @@ dependencies {
 // Embeded Jetty for testing
 jettyRun{
 	contextPath = "SpringMVCDemo"
-	httpPort = 8080
+	httpPort = 8099
 }
 
 jettyRunWar{
 	contextPath = "SpringMVCDemo"
-	httpPort = 8080
+	httpPort = 8099
 }
 
 
