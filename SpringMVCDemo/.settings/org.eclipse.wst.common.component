@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+	<wb-module deploy-name="SpringMVCDemo">
+		<property name="context-root" value="spring4"/>
+		<wb-resource deploy-path="/WEB-INF/classes" source-path="src/main/resources"/>
+		<wb-resource deploy-path="/WEB-INF/classes" source-path="src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/webapp"/>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/koti/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-classic/1.1.3/d90276fff414f06cb375f2057f6778cd63c6082f/logback-classic-1.1.3.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/koti/.m2/repository/org/springframework/spring-webmvc/4.1.6.RELEASE/spring-webmvc-4.1.6.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/koti/.m2/repository/javax/servlet/jstl/1.2/jstl-1.2.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/koti/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-core/1.1.3/e3c02049f2dbbc764681b40094ecf0dcbc99b157/logback-core-1.1.3.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/koti/.m2/repository/org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/koti/.m2/repository/org/springframework/spring-beans/4.1.6.RELEASE/spring-beans-4.1.6.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/koti/.m2/repository/org/springframework/spring-context/4.1.6.RELEASE/spring-context-4.1.6.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/koti/.m2/repository/org/springframework/spring-core/4.1.6.RELEASE/spring-core-4.1.6.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/koti/.m2/repository/org/springframework/spring-expression/4.1.6.RELEASE/spring-expression-4.1.6.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/koti/.m2/repository/org/springframework/spring-web/4.1.6.RELEASE/spring-web-4.1.6.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/koti/.m2/repository/org/springframework/spring-aop/4.1.6.RELEASE/spring-aop-4.1.6.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/koti/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/koti/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+	</wb-module>
+</project-modules>
