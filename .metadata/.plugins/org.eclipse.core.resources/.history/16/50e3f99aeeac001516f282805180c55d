@@ -1,0 +1,10 @@
+package org.gradle.hello;
+
+@RestController
+public class WelcomeController {
+
+	  @RequestMapping("/")
+	    public String index() {
+	        return "Greetings from Spring Boot!";
+	    }
+}

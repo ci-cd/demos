@@ -1,0 +1,10 @@
+package org.gradle.hello;
+
+
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@ComponentScan({ "org.gradle.hello" })
+public class SpringRootConfig {
+}

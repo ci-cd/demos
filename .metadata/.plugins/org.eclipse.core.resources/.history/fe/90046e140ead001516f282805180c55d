@@ -1,0 +1,19 @@
+package org.gradle.hello;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.AbstractController;
+
+
+@Controller
+public class WelcomeController extends AbstractController{
+	
+	@Override
+	protected ModelAndView handleRequestInternal(HttpServletRequest request,
+		HttpServletResponse response) throws Exception {
+
+		ModelAndView model = new ModelAndView("index");
+		
+		return model;
+	}
+}

@@ -1,0 +1,8 @@
+package org.gradle.hello;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class UrlHandlerController {
+
+}

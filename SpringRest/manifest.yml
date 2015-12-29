@@ -1,0 +1,7 @@
+---
+
+applications:
+- name: SpringRest
+  memory: 128MB
+  instances: 1
+  command: java -jar spring-rest-0.1.0.jar

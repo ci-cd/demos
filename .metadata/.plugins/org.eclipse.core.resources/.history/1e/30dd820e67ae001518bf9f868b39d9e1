@@ -1,0 +1,6 @@
+---
+
+applications:
+- name: SpringMVCDemo
+  memory: 128MB
+  instances: 1
