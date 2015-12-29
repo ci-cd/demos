@@ -15,6 +15,10 @@ public class GreetingController {
 
     @RequestMapping(method = RequestMethod.GET, value = "greeting/{name}")
     public Greeting greeting(@PathVariable String name){
+    	
+    	if ( "Koti".equalsIgnoreCase(name)) {
+    		System.exit(1);
+    	}
         return new Greeting(counter.incrementAndGet(),
                             String.format(template, name));
     }
