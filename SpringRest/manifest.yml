@@ -4,5 +4,6 @@ applications:
 - name: SpringRest
   memory: 512MB
   instances: 1
+  path: SpringRest/build/libs/SpringRest.war
   env:
     JBP_CONFIG_OPEN_JDK_MEMORY_CALCULATOR: "[memory_sizes: {metaspace: 128m}]"
