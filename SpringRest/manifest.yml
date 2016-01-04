@@ -7,3 +7,6 @@ applications:
   path: build/libs/SpringRest.war
   env:
     JBP_CONFIG_OPEN_JDK_MEMORY_CALCULATOR: "[memory_sizes: {metaspace: 128m}]"
+    SPRING_PROFILES_ACTIVE: cloud
+  services:
+   - xe
