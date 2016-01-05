@@ -72,7 +72,7 @@ uploadArchives {
              authentication(userName: "deployment", password: "deployment123")
 		}
              pom.version = "1.0-SNAPSHOT"
-             pom.artifactId = "simpleRest"
+             pom.artifactId = "SpringRest"
              pom.groupId = "com.cognizant"
        }
     }
