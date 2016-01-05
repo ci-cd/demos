@@ -1,6 +1,7 @@
 buildscript {
 	repositories {
 		maven { url "http://ci.rhels.com:18081/content/groups/public" }
+		maven {url "https://plugins.gradle.org/m2/"  }
 		mavenLocal()
 	}
 	dependencies {
