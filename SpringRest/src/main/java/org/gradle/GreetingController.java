@@ -43,33 +43,43 @@ public class GreetingController {
     
     @RequestMapping("/env")
     public void env(HttpServletResponse response) throws IOException, SQLException {
-        response.setContentType("text/plain");
+        response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        out.println("System Environment:");
+        
+        out.println("<html><body bgcolor='#E6E6FA'>");
+        out.println("<h2  style='font-family:verdana;font-size:80%;'>System Environment : </h2>");
+        
+        out.println("<table border='1' style='font-family:verdana;font-size:80%;'> <tr><th> Key </th> <th> Value </th> <tr> ");
         for (Map.Entry<String, String> envvar : System.getenv().entrySet()) {
-            out.println(envvar.getKey() + ": " + envvar.getValue());
+        	
+        	out.println("<tr><td>" + envvar.getKey() + " </td><td>" + envvar.getValue() + " </td></tr>");
         }
+        out.println("</table>");
         
-        out.println("Data Source : " + config.applicationInfo().toString());
+        out.println("<h2  style='font-family:verdana;font-size:80%;'>Application Instance Info : </h2>");
+        out.println("<table border='1' style='font-family:verdana;font-size:80%;'> <tr><th> Key </th> <th> Value </th> <tr> ");
+        Map<String,Object> propMap = config.applicationInfo().getProperties();
         
+        for ( Map.Entry<String, Object> entry : propMap.entrySet() ) {
+        	out.println("<tr><td>" +entry.getKey() + " </td><td> " + entry.getValue().toString() +" </td></tr>");
+        }
+        out.println("</table>");
         
-        
+        out.println("<h2  style='font-family:verdana;font-size:80%;'>Services Info : </h2>");
+        out.println("<table border='1'  style='font-family:verdana;font-size:80%;'> <tr><th> Parameter </th> <th> Value </th> <tr> ");
         List<ServiceInfo> serviceInfos = config.serviceInfo();
         for (ServiceInfo serviceInfo : serviceInfos) {
-        	out.println( " ServiceInfo of type : " + serviceInfo.getClass().getName());
             if (serviceInfo instanceof RelationalServiceInfo) {
-                out.println(" JDBC URL : " + ((RelationalServiceInfo) serviceInfo).getJdbcUrl());
+            	out.println(" <tr><td> Service ID </td><td>" + ((RelationalServiceInfo) serviceInfo).getId() + "</td></tr>");
+                out.println(" <tr><td> JDBC URL </td><td>" + ((RelationalServiceInfo) serviceInfo).getJdbcUrl() + "</td></tr>");
+                out.println(" <tr><td> Service Host </td><td>" + ((RelationalServiceInfo) serviceInfo).getHost() + "</td></tr>");
+                out.println(" <tr><td> Service Type </td><td>" + ((RelationalServiceInfo) serviceInfo).getClass().getName() + "</td></tr>");
+                
             }
-            
-            
         }
-       
-
-        out.println(" Oracle DataSource : " + config.oracleDataSource());
-        
-//        Connection con = config.oracleDataSource().getConnection();
-//        
-//        out.println(" Connection  : " + con);
+        out.println("<tr><td> Oracle DataSource</td><td>" + config.oracleDataSource() + " </td><tr>");
+        out.println("<tr><td> Oracle Connection</td><td>" + config.oracleDataSource().getConnection() + " </td><tr>");
+        out.println("</table></body></html>");
 
     }
     
@@ -77,8 +87,8 @@ public class GreetingController {
     public void getDBData(HttpServletResponse response) throws IOException, SQLException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        out.println("<html><body>");
-        out.println("<h1> Table Data </h1>");
+        out.println("<html><body bgcolor='#E6E6FA'>");
+        out.println("<h1 style='font-family:verdana;font-size:80%;'> Table Data </h1>");
         
         Connection conn = null;
         Statement stmt = null;
@@ -90,7 +100,7 @@ public class GreetingController {
           
            ResultSet rs = stmt.executeQuery(sql);
 
-           out.println("<table><tr><th>EMP_ID</th><th>EMP_NAME</th><th>DEPT_ID</th><th>EMP_LOC</th><th>EMP-SAL<th></tr>");
+           out.println("<table border='1' style='font-family:verdana;'><tr><th>EMP_ID</th><th>EMP_NAME</th><th>DEPT_ID</th><th>EMP_LOC</th><th>EMP-SAL<th></tr>");
            //STEP 5: Extract data from result set
            while(rs.next()){
               //Retrieve by column name
