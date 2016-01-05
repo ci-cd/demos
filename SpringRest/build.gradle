@@ -8,6 +8,8 @@ buildscript {
 		classpath("org.springframework.build.gradle:propdeps-plugin:0.0.7")
 		classpath("io.spring.gradle:dependency-management-plugin:0.5.3.RELEASE")
 		classpath("io.spring.gradle:spring-io-plugin:0.0.4.RELEASE")
+	        classpath 'org.ajoberstar:gradle-jacoco:0.1.0'
+	        classpath 'org.sonarqube.gradle:gradle-sonarqube-plugin:1.0'
 	}
 }
 
@@ -39,8 +41,9 @@ jar {
 }
 
 repositories {
+    maven { url "http://ci.rhels.com:18081/content/groups/public" }
     mavenLocal()
-    mavenCentral()
+    
 }
 
 dependencies {
@@ -50,7 +53,7 @@ dependencies {
 	compile("org.springframework.cloud:spring-cloud-spring-service-connector")
 	compile("org.springframework:spring-jdbc")
 	compile files('libs/ojdbc7.jar')
-    testCompile("junit:junit")
+	testCompile 'junit:junit:4.12'
 }
 
 task wrapper(type: Wrapper) {
@@ -72,4 +75,19 @@ uploadArchives {
              pom.groupId = "com.cognizant"
        }
     }
+}
+
+apply plugin: 'org.sonarqube'
+apply plugin: 'jacoco'
+
+sonarqube {
+    properties {
+        property "sonar.projectName", "Java :: Spring Rest"
+        property "sonar.projectKey", "com.cognizant:simpleRest"
+        property "sonar.jacoco.reportPath", "${project.buildDir}/jacoco/test.exec"
+    }
+}
+
+test {
+  ignoreFailures = true
 }
