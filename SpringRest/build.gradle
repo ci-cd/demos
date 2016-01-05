@@ -64,7 +64,7 @@ war {
 uploadArchives {
     repositories {
        mavenDeployer {
-             repository(url: "http://rhels.com:8081/content/repositories/snapshots") {
+             repository(url: "http://rhels.com:18081/content/repositories/snapshots") {
              authentication(userName: "deployment", password: "deployment123")
 		}
              pom.version = "1.0-SNAPSHOT"
