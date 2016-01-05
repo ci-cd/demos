@@ -25,6 +25,7 @@ apply plugin: 'idea'
 apply plugin: 'spring-boot'
 apply plugin: 'war'
 apply plugin: "io.spring.dependency-management"
+apply plugin: 'maven'
 
 dependencyManagement {
 	imports {
@@ -60,3 +61,15 @@ war {
 	classpath fileTree('libs/ojdbc7.jar') // adds a file-set to the WEB-INF/lib dir.
 }
 
+uploadArchives {
+    repositories {
+       mavenDeployer {
+             repository(url: "http://rhels.:8081/content/repositories/snapshots") {
+             authentication(userName: "deployment", password: "deployment123")
+		}
+             pom.version = "1.0-SNAPSHOT"
+             pom.artifactId = "simpleRest"
+             pom.groupId = "com.cognizant"
+       }
+    }
+}
